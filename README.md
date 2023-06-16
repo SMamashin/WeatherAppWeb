@@ -1,4 +1,4 @@
-<img src="./ui/lib/ic/cover.jpg" width="423px" height="1546px" alt="error" title="icon-project">
+<img src="./ui/lib/ic/cover.jpg" width="1080px" height="900px" alt="error" title="icon-project">
 <h1> WeatherApp </h1>
 Another useless local project with detailed weather display in the web interface -_-
 
