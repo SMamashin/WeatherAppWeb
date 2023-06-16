@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="./lib/ic/appicon_2.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="./lib/css/ui.css">
+    <link rel="stylesheet" type="text/css" href="./lib/css/rgb.css"
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <title>WeatherApp by S-Mamashin</title>
+</head>
+<body>
+    <div class="weather">
+        </div>
+      <!-- nav icon link  <center>
+            <a href="https://github.com/SMamashin"><img src="./lib/ic/github.png" width="15px" height="15px" alt="github" title="GitHub Profile"></a>
+            <a href="https://www.blast.hk/members/386859/"><img src="./lib/ic/bh.png" width="15px" height="15px" alt="blast" title="BlastHack Profile"></a>
+        </center> -->
+        <div class="weatherCity">
+            <input id="location" type="text" placeholder="Город . . ." required=""
+                value="Москва">
+            <button id="btn" onclick="btn">Посмотреть погоду</button>
+            <div id="info">
+                <h6> WeatherApp v2.0 - ещё один бесполезный маленький проект <br>Приятного использования by <a class="gl" href="https://vk.com/evangelion1995"> S-Mamashin</a> <br> <br> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                      </svg> Чтобы узнать детальный прогноз на данный момент - введите нужный существующий* город
+                      <br> <br> <br>
+                      <hr>
+                    <a href="https://github.com/SMamashin"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                      </svg> GitHub репозиторий</a> <br><br>
+                    <a href="https://smamashin.ru">  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filetype-php" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM1.6 11.85H0v3.999h.791v-1.342h.803c.287 0 .531-.057.732-.173.203-.117.358-.275.463-.474a1.42 1.42 0 0 0 .161-.677c0-.25-.053-.476-.158-.677a1.176 1.176 0 0 0-.46-.477c-.2-.12-.443-.179-.732-.179Zm.545 1.333a.795.795 0 0 1-.085.38.574.574 0 0 1-.238.241.794.794 0 0 1-.375.082H.788V12.48h.66c.218 0 .389.06.512.181.123.122.185.295.185.522Zm4.48 2.666V11.85h-.79v1.626H4.153V11.85h-.79v3.999h.79v-1.714h1.682v1.714h.79Zm.703-3.999h1.6c.288 0 .533.06.732.179.2.117.354.276.46.477.105.201.158.427.158.677 0 .25-.054.476-.161.677-.106.199-.26.357-.463.474a1.452 1.452 0 0 1-.733.173H8.12v1.342h-.791V11.85Zm2.06 1.714a.795.795 0 0 0 .084-.381c0-.227-.061-.4-.184-.521-.123-.122-.294-.182-.513-.182h-.66v1.406h.66a.794.794 0 0 0 .375-.082.574.574 0 0 0 .237-.24Z"/>
+                      </svg> S-Mamashin.ru/</a> <br> <br>
+                    <a href="./ChangeLog/c_log.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-files" viewBox="0 0 16 16">
+                        <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
+                      </svg> ChangeLog</a><br><br>
+                        <div style="padding: 1px;" class="time"><span>Local time: </span><span id="doc_time"></span></div>
+                        <script type="text/javascript">
+                           function clock() {
+                           var d = new Date();
+                           var hours = d.getHours();
+                           var minutes = d.getMinutes();
+                           var seconds = d.getSeconds();
+                           if (hours <= 9) hours = "0" + hours;
+                           if (minutes <= 9) minutes = "0" + minutes;
+                           if (seconds <= 9) seconds = "0" + seconds;
+                           date_time = hours + ":" + minutes + ":" + seconds;
+                           if (document.layers) {
+                           document.layers.doc_time.document.write(date_time);
+                           document.layers.doc_time.document.close();
+                           } else document.getElementById("doc_time").innerHTML = date_time;
+                           setTimeout("clock()", 1000);
+                           }
+                        </script>
+                        <script type="text/javascript">
+                           clock();
+                        </script>
+                    </h6>
+            </div>
+        </div>
+ <!-- типо footer      <center>
+            <div class="author">
+                <span><p>WeatherApp - Version 2.0 <br><br> Dev/Design by</p>  <a class="stepan" href="https://vk.com/evangelion1995"> S-Mamashin</a></div></span>
+            </div>
+        </center>-->
+    </div>
+
+    <script type="text/javascript" src="eel.js"></script>
+    <script src="./lib/js/jquery-3.6.2.min.js"></script>
+    <script>
+        async function display_weather() {
+            let city = document.getElementById("location").value;
+
+            let search = await eel.get_weather(city)();
+            document.getElementById("info").innerHTML = search;
+
+            let error = await eel.get_weather(error)();
+            document.getElementById("info").innerHTML = error;
+        }
+
+        $("#btn").on('click',function() {
+            display_weather()
+        });
+
+        $("#btn").click(function() {
+        $(this).css('background', 'linear-gradient(10deg, #00927f, #346aff)');
+        });
+
+        if(city == "/r") {
+                window.location.reload();
+            }
+
+    </script>
+</body>
+
+</html>

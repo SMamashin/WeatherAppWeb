@@ -1,0 +1,36 @@
+.stepan {
+    background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: rainbow 15s ease infinite;
+    animation: rainbow 15s ease infinite;
+    font-size: 15px;
+    line-height: 25px;
+    text-decoration: red wavy underline;
+  }
+   
+  @-webkit-keyframes rainbow {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+  }
+   
+  @keyframes rainbow {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+  }
+  
+.stepan:hover {
+
+    background: linear-gradient(to left, red, orange, yellow, green, cyan, blue, violet);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: rainbow 1s ease infinite;
+    animation: rainbow 1s ease infinite;
+    font-size: 25px;
+    line-height: 25px;
+    text-decoration: red wavy underline;
+}
