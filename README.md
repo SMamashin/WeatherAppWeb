@@ -1,4 +1,4 @@
-<img src="./ui/lib/ic/appicon_2.png" width="30px" height="30px" alt="error" title="icon-project">
+<img src="./ui/lib/ic/appicon_2.png" width="50px" height="50px" alt="error" title="icon-project">
 # WeatherApp
 Another useless local project with detailed weather display in the web interface -_-
 
