@@ -12,10 +12,6 @@
 <body>
     <div class="weather">
         </div>
-      <!-- nav icon link  <center>
-            <a href="https://github.com/SMamashin"><img src="./lib/ic/github.png" width="15px" height="15px" alt="github" title="GitHub Profile"></a>
-            <a href="https://www.blast.hk/members/386859/"><img src="./lib/ic/bh.png" width="15px" height="15px" alt="blast" title="BlastHack Profile"></a>
-        </center> -->
         <div class="weatherCity">
             <input id="location" type="text" placeholder="Город . . ." required=""
                 value="Москва">
@@ -36,23 +32,8 @@
                     <a href="./ChangeLog/c_log.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-files" viewBox="0 0 16 16">
                         <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
                       </svg> ChangeLog</a><br><br>
-                        <div style="padding: 1px;" class="time"><span>Local time: </span><span id="doc_time"></span></div>
-                        <script type="text/javascript">
-                           function clock() {
-                           var d = new Date();
-                           var hours = d.getHours();
-                           var minutes = d.getMinutes();
-                           var seconds = d.getSeconds();
-                           if (hours <= 9) hours = "0" + hours;
-                           if (minutes <= 9) minutes = "0" + minutes;
-                           if (seconds <= 9) seconds = "0" + seconds;
-                           date_time = hours + ":" + minutes + ":" + seconds;
-                           if (document.layers) {
-                           document.layers.doc_time.document.write(date_time);
-                           document.layers.doc_time.document.close();
-                           } else document.getElementById("doc_time").innerHTML = date_time;
-                           setTimeout("clock()", 1000);
-                           }
+                        <div style="padding: 1px;" id="local-time"><span>Local time: </span><span id="doc_time"></span></div>
+                        <script type="text/javascript" src="./lib/js/clock.js">
                         </script>
                         <script type="text/javascript">
                            clock();
@@ -60,15 +41,11 @@
                     </h6>
             </div>
         </div>
- <!-- типо footer      <center>
-            <div class="author">
-                <span><p>WeatherApp - Version 2.0 <br><br> Dev/Design by</p>  <a class="stepan" href="https://vk.com/evangelion1995"> S-Mamashin</a></div></span>
-            </div>
-        </center>-->
     </div>
 
     <script type="text/javascript" src="eel.js"></script>
     <script src="./lib/js/jquery-3.6.2.min.js"></script>
+    <script type="text/javascript" src="./lib/js/refresh.js"></script>
     <script>
         async function display_weather() {
             let city = document.getElementById("location").value;
@@ -78,6 +55,8 @@
 
             let error = await eel.get_weather(error)();
             document.getElementById("info").innerHTML = error;
+
+            
         }
 
         $("#btn").on('click',function() {
@@ -88,9 +67,7 @@
         $(this).css('background', 'linear-gradient(10deg, #00927f, #346aff)');
         });
 
-        if(city == "/r") {
-                window.location.reload();
-            }
+
 
     </script>
 </body>

@@ -10,7 +10,8 @@ owm = OWM("")
 pyowmconfig = cfg.get_default_config()
 pyowmconfig['language'] = 'ru'
 
-eel.init("ui")
+eel.init("c:/dev/projects/weatherapp/ui")
+
 
 
 @eel.expose
@@ -26,8 +27,9 @@ def get_weather(city):
         max_temp = tg['temp_max']
         min_temp = tg['temp_min']
         e_temp = "🌡"
-        e_status = "🌍"
+        e_status = " "
 
+        hello = "Ты молодец!"
 
         wind = weather.wind()['speed']
         pressure = weather.pressure['press']
@@ -38,16 +40,31 @@ def get_weather(city):
 
         if status == "ясно":
             e_status = "☀️"
+
         elif status == "переменная облачность":
             e_status = "🌤"
+
         elif status == "облачно с прояснениями":
             e_status = "🌥"
+
         elif status == "небольшой дождь":
             e_status = "🌦"
+
         elif status == "пасмурно":
             e_status = "☁️"
+
+        elif status == "небольшая облачность":
+            e_status = "☁️"
+
+        elif status == "дождь":
+            e_status = "🌧"
+
+        elif status == "мгла":
+            e_status = "💨"
+
         else:
             e_status = "🌍"
+
 
         return (f"В городе {city} температура {int(local_temp)} °C {e_temp} \n\
                  Максимальная температура: {int(max_temp)} °C \n \
@@ -67,7 +84,7 @@ def get_weather(city):
         return error
 
 
-eel.start("ui.html", size=(1089, 959))
+eel.start("ui.html", size=(1089, 959), mode = 'chrome')
 
 # trasher
 
@@ -82,3 +99,10 @@ eel.start("ui.html", size=(1089, 959))
                 "Давление: " + str(pressure) + " мм.рт.ст" + "\n" +
                 "Влажность: " + str(moisture) +" %")
 '''
+
+
+# old emoji weather 
+
+"""
+
+"""
