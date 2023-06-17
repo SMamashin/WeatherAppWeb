@@ -34,7 +34,9 @@ def get_weather(city):
         pressure = weather.pressure['press']
         moisture = weather.humidity
         status = weather.detailed_status 
-
+        
+        # <--saxon-- 
+        
         status_emoji = {
             "ясно": "☀️",
             "переменная облачность": "🌤",
@@ -45,6 +47,8 @@ def get_weather(city):
             "дождь": "🌧",
             "мгла": "💨"
         }
+        
+        # -- saxon --> # 
         
         return (f"В городе {city} температура {int(local_temp)} °C {e_temp} \n\
                  Максимальная температура: {int(max_temp)} °C \n \
