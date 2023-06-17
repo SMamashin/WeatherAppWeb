@@ -1,4 +1,4 @@
-<img src="./ui/lib/ic/cover.jpg"  alt="error" title="cover-project">
+<img src="./ui/lib/background/cover.jpg"  alt="error" title="cover-project">
 <h1> WeatherApp </h1>
 Another useless local project with detailed weather display in the web interface -_-
 
