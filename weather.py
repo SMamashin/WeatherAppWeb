@@ -27,7 +27,8 @@ def get_weather(city):
         max_temp = tg['temp_max']
         min_temp = tg['temp_min']
         e_temp = "🌡"
-        e_status = " "
+        
+        #e_status = " "
 
 
         wind = weather.wind()['speed']
