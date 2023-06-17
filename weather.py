@@ -29,7 +29,6 @@ def get_weather(city):
         e_temp = "🌡"
         e_status = " "
 
-        hello = "Ты молодец!"
 
         wind = weather.wind()['speed']
         pressure = weather.pressure['press']
