@@ -10,7 +10,7 @@ owm = OWM("")
 pyowmconfig = cfg.get_default_config()
 pyowmconfig['language'] = 'ru'
 
-eel.init("c:/dev/projects/weatherapp/ui")
+eel.init("ui")
 
 
 
