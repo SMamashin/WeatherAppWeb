@@ -5,12 +5,12 @@ from pyowm.utils import config as cfg
 from pyowm.utils import timestamps
 import eel
 
-owm = OWM("421f5d580af9b36676c24f2ca5715278")
+owm = OWM("") # api key openweathermap
 
 pyowmconfig = cfg.get_default_config()
 pyowmconfig['language'] = 'ru'
 
-eel.init("C:/WeatherAppWeb/ui")
+eel.init("ui")
 
 
 
